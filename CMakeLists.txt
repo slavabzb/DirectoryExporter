@@ -8,7 +8,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( SRC_LIST
   main.cpp
-  export_directory.cpp
+  DirectoryScanner.cpp
   XmlWriter.cpp
 )
 
