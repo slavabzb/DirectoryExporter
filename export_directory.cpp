@@ -32,6 +32,7 @@ bool is_directory(WIN32_FIND_DATA& find_data)
 }
 
 
+
 void write_element(std::ostream& stream, const char* tag, const char* element, int indent)
 {
     for (int i = 0; i < indent; ++i) {

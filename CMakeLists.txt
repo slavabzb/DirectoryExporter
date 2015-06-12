@@ -9,6 +9,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 set( SRC_LIST
   main.cpp
   export_directory.cpp
+  XmlWriter.cpp
 )
 
 add_executable( ${PROJECT_NAME} ${SRC_LIST} )
