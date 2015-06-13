@@ -1,10 +1,10 @@
-#include "DirectoryScanner.h"
+#include "DirectoryExporter.h"
 
 #include <shlwapi.h>
 
 
 
-DirectoryScanner::DirectoryScanner()
+DirectoryExporter::DirectoryExporter()
     : xml_writer(stream)
 {
 
@@ -12,14 +12,14 @@ DirectoryScanner::DirectoryScanner()
 
 
 
-uint64_t DirectoryScanner::export_to_xml(const char* path, const char* file)
+uint64_t DirectoryExporter::to_xml(const char* path, const char* file)
 {
     this->stream.open(file);
     if (!this->stream.is_open()) {
         return false;
     }
 
-    xml_writer.write_start_document("tree");
+    xml_writer.write_start_document("tree", "path", path);
 
     uint64_t result = this->scan(path);
 
@@ -30,7 +30,7 @@ uint64_t DirectoryScanner::export_to_xml(const char* path, const char* file)
 
 
 
-uint64_t DirectoryScanner::scan(const char* path)
+uint64_t DirectoryExporter::scan(const char* path)
 {
     if (path == nullptr) {
         return 1;
@@ -77,7 +77,7 @@ uint64_t DirectoryScanner::scan(const char* path)
 
 
 
-bool DirectoryScanner::is_directory(WIN32_FIND_DATA& find_data) const
+bool DirectoryExporter::is_directory(WIN32_FIND_DATA& find_data) const
 {
     if (find_data.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) {
         return true;
@@ -88,7 +88,7 @@ bool DirectoryScanner::is_directory(WIN32_FIND_DATA& find_data) const
 
 
 
-bool DirectoryScanner::is_special(const char* file) const
+bool DirectoryExporter::is_special(const char* file) const
 {
     const char special_directories[][3] = { {"."}, {".."} };
 

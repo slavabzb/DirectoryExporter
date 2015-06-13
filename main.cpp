@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "DirectoryScanner.h"
+#include "DirectoryExporter.h"
 
 
 
@@ -9,9 +9,8 @@ int main()
     const char* path = "C:\\My Cool Folder";
     const char* file = "Tree.xml";
 
-    DirectoryScanner directory_scanner;
-    directory_scanner.export_to_xml(path, file);
+    DirectoryExporter directory_exporter;
 
-    return 0;
+    return directory_exporter.to_xml(path, file);
 }
 

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<tree path="C:\My Cool Folder">
+  <directory name="Administrator">
+    <directory name="Application Data">
+      <directory name="ComplexSystems">
+        <directory name="Delta8">
+          <directory name="Settings">
+          </directory>
+        </directory>
+        <file name="New Bitmap Image.bmp">
+        </file>
+        <file name="New Microsoft Excel.xlsx">
+        </file>
+      </directory>
+      <directory name="Example">
+      </directory>
+    </directory>
+    <directory name="New Folder">
+    </directory>
+  </directory>
+</tree>

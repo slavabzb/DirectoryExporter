@@ -12,12 +12,10 @@ XmlWriter::XmlWriter(std::ostream& stream)
 
 
 
-void XmlWriter::write_start_document(const char* root)
+void XmlWriter::write_start_document(const char* root, const char* attribute, const char* value)
 {
-    assert(root != nullptr);
-
     this->stream << "<?xml version=\"1.0\"?>\n";
-    this->write_start_element(root);
+    this->write_start_element(root, attribute, value);
 }
 
 

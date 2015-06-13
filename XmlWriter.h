@@ -11,7 +11,7 @@ class XmlWriter
 public:
     XmlWriter(std::ostream& stream);
 
-    void write_start_document(const char* root);
+    void write_start_document(const char* root, const char* attribute = nullptr, const char* value = nullptr);
     void write_start_element(const char* tag, const char* attribute = nullptr, const char* value = nullptr);
     void write_end_element();
     void write_end_document();

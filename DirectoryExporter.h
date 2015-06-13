@@ -1,5 +1,5 @@
-#ifndef DIRECTORYSCANNER_H
-#define DIRECTORYSCANNER_H
+#ifndef DIRECTORYEXPORTER_H
+#define DIRECTORYEXPORTER_H
 
 #include <fstream>
 #include <windows.h>
@@ -8,12 +8,12 @@
 
 
 
-class DirectoryScanner
+class DirectoryExporter
 {
 public:
-    DirectoryScanner();
+    DirectoryExporter();
 
-    uint64_t export_to_xml(const char* path, const char* file);
+    uint64_t to_xml(const char* path, const char* file);
 
 private:
     uint64_t scan(const char* path);
@@ -25,4 +25,4 @@ private:
     XmlWriter xml_writer;
 };
 
-#endif // DIRECTORYSCANNER_H
+#endif // DIRECTORYEXPORTER_H
